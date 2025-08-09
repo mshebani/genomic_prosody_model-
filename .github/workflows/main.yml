@@ -1,0 +1,25 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main  # أو اسم الفرع الذي تريد متابعته
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js (أو Python أو أي لغة أخرى)
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # تأكد من استخدام النسخة المناسبة
+
+    - name: Install dependencies
+      run: npm install  # استبدل هذا الأمر حسب احتياجات مشروعك
+
+    - name: Run tests
+      run: npm test  # استبدل هذا الأمر حسب احتياجات مشروعك
